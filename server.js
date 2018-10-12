@@ -3,15 +3,20 @@
 // npm install express --save
 // npm install socket.io --save
 // npm install twit -- save
+require('dotenv').load();
 
 var express = require('express')
   , app = express()
   , http = require('http')
   , server = http.createServer(app)
-  ,Twit = require('twit')
+  , Twit = require('twit')
   , io = require('socket.io').listen(server);
 
-server.listen(process.env.PORT || 5000);
+  app.use(express.static('public'))
+  app.use("/public", express.static(__dirname + "/public"));
+
+  server.listen(process.env.PORT || 5000);
+
 
 // routing
 app.get('/', function (req, res) {
