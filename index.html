@@ -7,20 +7,13 @@
   <title>Document</title>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  <script src="client.js"></script>
 </head>
 <body>
   <h1>Hey</h1>
-
-    <script>
-        $(function(){
-          var socket = io.connect('https://rk-mobile-kitchens.herokuapp.com/:'+process.env.PORT);
-          socket.on('stream', function(tweet) {
-            console.log(tweet);
-            $('body').append('<div class="tweet">' + tweet + '</div>');
-        });
-      });
-    </script>
   </div>
   
 </body>
 </html>
+
+__dirname
